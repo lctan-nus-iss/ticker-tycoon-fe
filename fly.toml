@@ -1,15 +1,14 @@
-# fly.toml app configuration file generated for ticker-tycoon-fe-qrdrka on 2026-09-21T03:46:29Z
+# fly.toml app configuration file generated for ticker-tycoon-fe-fun on 2026-09-21T14:03:25+08:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'ticker-tycoon-fe-qrdrka'
+app = 'ticker-tycoon-fe-fun'
 primary_region = 'sin'
 
 [build]
-
 [http_service]
-  internal_port = 8080
+  internal_port = 5173
   force_https = true
   auto_stop_machines = 'stop'
   auto_start_machines = true
@@ -18,6 +17,5 @@ primary_region = 'sin'
 
 [[vm]]
   memory = '1gb'
-  cpu_kind = 'shared'
   cpus = 1
   memory_mb = 1024

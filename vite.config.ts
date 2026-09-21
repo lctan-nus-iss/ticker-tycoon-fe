@@ -5,9 +5,11 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5173,
+    allowedHosts: ['ticker-tycoon-fe-fun.fly.dev'],
     proxy: {
       '/api': {
-        target: 'http://ticker-tycoon-be:8080',
+        //target: 'http://ticker-tycoon-be:8080',
+        target: "https://ticker-tycoon-be-fun.fly.dev",
         changeOrigin: true,
         timeout: 180_000,
         proxyTimeout: 180_000,
