@@ -535,7 +535,7 @@ export function GamePage() {
                   Your Portfolio
                 </div>
                 <div style={{ fontSize:11, color:'#8A826E', marginTop:2 }}>
-                  Review cash, positions, and exposure
+                  Click a holding to add or sell
                 </div>
               </div>
               <div style={{ display:'flex', alignItems:'center', gap:8 }}>
@@ -563,9 +563,12 @@ export function GamePage() {
                   const gl    = val - pos.shares * pos.avgCost
                   const glP   = (gl / (pos.shares * pos.avgCost)) * 100
                   const chg   = chgPct(id)
+                  const sel   = selectedAsset === id
                   return (
-                    <div key={id} style={{ background:'#F5F0E8', border:'1px solid #E2D9C8',
-                      borderRadius:8, padding:'10px 12px', marginBottom:8 }}>
+                    <div key={id}
+                      onClick={() => { setSelectedAsset(id); setActionTab('sell') }}
+                      style={{ background: sel ? '#FDF5E6' : '#F5F0E8', border:`1px solid ${sel ? '#E8CC8A' : '#E2D9C8'}`,
+                      borderRadius:8, padding:'10px 12px', marginBottom:8, cursor:'pointer' }}>
                       <div style={{ display:'flex', justifyContent:'space-between', marginBottom:4 }}>
                         <span style={{ fontSize:13, fontWeight:700 }}>{id.toUpperCase()}</span>
                         <span style={{ fontFamily:'Playfair Display,serif', fontSize:14, fontWeight:700 }}>
